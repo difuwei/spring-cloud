@@ -1,0 +1,10 @@
+server:
+  port: 8082
+#  address: wxte.com
+spring:
+  application:
+    name: client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8085/eureka/
