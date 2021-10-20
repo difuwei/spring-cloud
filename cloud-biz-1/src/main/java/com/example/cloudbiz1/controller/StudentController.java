@@ -17,4 +17,8 @@ public class StudentController {
         return studentEntity;
 
     }
+    @RequestMapping(value = "/feign")
+    public String feignProvider(){
+        return "feign provider -1";
+    }
 }

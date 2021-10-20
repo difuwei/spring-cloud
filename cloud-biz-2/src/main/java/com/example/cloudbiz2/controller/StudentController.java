@@ -28,4 +28,8 @@ public class StudentController {
         return studentEntity;
 
     }
+    @RequestMapping("feign")
+    public String feignStudent(){
+        return "biz -2";
+    }
 }
