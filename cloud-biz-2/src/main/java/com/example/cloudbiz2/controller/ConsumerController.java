@@ -2,7 +2,6 @@ package com.example.cloudbiz2.controller;
 
 import com.example.cloudbiz2.Ifegin.IFeignClient;
 import com.example.cloudbiz2.entity.StudentEntity;
-import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +18,8 @@ public class ConsumerController {
     RestTemplate restTemplate;
     @Resource
     private IFeignClient iFeignClient;
+//    @Resource
+//    private IFeignClientA iFeignClienta;
     @GetMapping(value = "/stu")
     public void ConsumerStudent(){
         //使用resttemplate发起http请求 biz-1服务
@@ -32,6 +33,12 @@ public class ConsumerController {
     @RequestMapping("/feign")
     public String FeignConsumerStudent(){
         System.out.println(222);
+        String s = iFeignClient.msg();
+        return  s;
+    }
+    @RequestMapping("/feign-url")
+    public String FeignConsumerStudentUrl(){
+        System.out.println(33);
         String s = iFeignClient.msg();
         return  s;
     }
